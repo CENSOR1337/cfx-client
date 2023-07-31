@@ -5,6 +5,7 @@
 	"types": "dist/index.d.ts",
 	"scripts": {
 		"build": "tsc",
+        "watch": "tsc -w",
 		"update": "node ./scripts/update.js",
         "gen": "node ./scripts/generate.js",
         "validate": "node ./scripts/validate.js"
