@@ -8,6 +8,7 @@
         ],
         "types": [
             "@types/node",
+            "@citizenfx/client"
         ],
         "declaration": true,
         "outDir": "./dist",
@@ -16,11 +17,5 @@
         "strict": true,
         "strictNullChecks": true,
         "skipLibCheck": true
-    },
-    "exclude": [
-        "node_modules",
-        "dist",
-        "bin",
-        "src/header.ts"
-    ],
+    }
 }
