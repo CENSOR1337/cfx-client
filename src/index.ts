@@ -1,3 +1,3 @@
 export * from "@cfx/shared";
 export * from "./clientNatives";
-export { Events } from "./Events";
+export { Event } from "./Event";

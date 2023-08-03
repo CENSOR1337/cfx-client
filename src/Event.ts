@@ -1,19 +1,17 @@
-import { Events as SharedEvents } from "@cfx/shared";
 import { Event as SharedEvent } from "@cfx/shared";
 import { listenerType } from "@cfx/shared";
 import { Citizen } from "@cfx/shared";
-import cfx from "@cfx/shared";
 
-export class Events extends SharedEvents {
+export class Event extends SharedEvent {
 	public static onServer(eventName: string, listener: listenerType, once = false): SharedEvent {
 		const handler = (...args: any[]) => {
-			listener(...SharedEvent.getClassFromArguments(...args));
+			listener(...this.getClassFromArguments(...args));
 		};
-		return new SharedEvent(eventName, handler, true, once);
+        return new this(eventName, handler, true, once);
 	}
 
 	public static onceServer(eventName: string, listener: listenerType): SharedEvent {
-		return Events.onServer(eventName, listener, true);
+		return Event.onServer(eventName, listener, true);
 	}
 
 	public static emitServer = Citizen.triggerServerEvent;
