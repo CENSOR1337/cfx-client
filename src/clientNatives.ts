@@ -83,7 +83,7 @@ function _mv(vector: any): Vector3 {
  * @param submixId
  * @param outputSubmixId
  */
-export function addAudioSubmixOutput(submixId: number, outputSubmixId: number): any { 
+export function addAudioSubmixOutput(submixId: number, outputSubmixId: number): void { 
 	return _in(0x00000000, 0xac6e290d, submixId, outputSubmixId); 
 }
 
@@ -102,15 +102,15 @@ export function addMinimapOverlay(name: string): number {
  * @param newTxd
  * @param newTxn
  */
-export function addReplaceTexture(origTxd: string, origTxn: string, newTxd: string, newTxn: string): any { 
+export function addReplaceTexture(origTxd: string, origTxn: string, newTxd: string, newTxn: string): void { 
 	return _in(0x00000000, 0xa66f8f75, _ts(origTxd), _ts(origTxn), _ts(newTxd), _ts(newTxn)); 
 }
 
-export function addTextEntry(entryKey: string, entryText: string): any { 
+export function addTextEntry(entryKey: string, entryText: string): void { 
 	return _in(0x00000000, 0x32ca01c3, _ts(entryKey), _ts(entryText)); 
 }
 
-export function addTextEntryByHash(entryKey: number, entryText: string): any { 
+export function addTextEntryByHash(entryKey: number, entryText: string): void { 
 	return _in(0x00000000, 0x289da860, entryKey, _ts(entryText)); 
 }
 
@@ -127,7 +127,7 @@ export function callMinimapScaleformFunction(miniMap: number, fnName: string): b
  * Removes vehicle xenon lights custom RGB color.
  * @param vehicle
  */
-export function clearVehicleXenonLightsCustomColor(vehicle: number): any { 
+export function clearVehicleXenonLightsCustomColor(vehicle: number): void { 
 	return _in(0x00000000, 0x2867ed8c, vehicle); 
 }
 
@@ -135,7 +135,7 @@ export function clearVehicleXenonLightsCustomColor(vehicle: number): any {
  * Commits the backing pixels to the specified runtime texture.
  * @param tex
  */
-export function commitRuntimeTexture(tex: any): any { 
+export function commitRuntimeTexture(tex: any): void { 
 	return _in(0x00000000, 0x19d81f4e, tex); 
 }
 
@@ -221,7 +221,7 @@ export function createRuntimeTxd(name: string): any {
  * Destroys a DUI browser.
  * @param duiObject
  */
-export function destroyDui(duiObject: any): any { 
+export function destroyDui(duiObject: any): void { 
 	return _in(0x00000000, 0xa085cb10, duiObject); 
 }
 
@@ -229,7 +229,7 @@ export function destroyDui(duiObject: any): any {
  * Disables the editor runtime mode, changing game behavior to not track entity metadata.
  * This function supports SDK infrastructure and is not intended to be used directly from your code.
  */
-export function disableEditorRuntime(): any { 
+export function disableEditorRuntime(): void { 
 	return _in(0x00000000, 0xb1622b17); 
 }
 
@@ -237,7 +237,7 @@ export function disableEditorRuntime(): any {
  * Disables the game's afk camera that starts panning around after 30 seconds of inactivity.
  * @param state
  */
-export function disableIdleCamera(state: boolean): any { 
+export function disableIdleCamera(state: boolean): void { 
 	return _in(0x00000000, 0x3d5ab7f0, state); 
 }
 
@@ -246,7 +246,7 @@ export function disableIdleCamera(state: boolean): any {
  * Using the island hopper natives might also affect this state.
  * @param state
  */
-export function disableWorldhorizonRendering(state: boolean): any { 
+export function disableWorldhorizonRendering(state: boolean): void { 
 	return _in(0x00000000, 0xa9c92cdc, state); 
 }
 
@@ -259,8 +259,8 @@ export function disableWorldhorizonRendering(state: boolean): any {
  * [{doorHash1, doorHandle1}, ..., {doorHashN, doorHandleN}]
  * ```
  */
-export function doorSystemGetActive(): number { 
-	return _in(0x00000000, 0xf65bba4b, _r, _ri); 
+export function doorSystemGetActive(): any { 
+	return _in(0x00000000, 0xf65bba4b, _r, _ro); 
 }
 
 export function doorSystemGetSize(): number { 
@@ -298,7 +298,7 @@ export function drawGizmo(matrixPtr: any, id: string): boolean {
  * @param b
  * @param a
  */
-export function drawLine2d(x1: number, y1: number, x2: number, y2: number, width: number, r: number, g: number, b: number, a: number): any { 
+export function drawLine2d(x1: number, y1: number, x2: number, y2: number, width: number, r: number, g: number, b: number, a: number): void { 
 	return _in(0x00000000, 0x0b856a90, _fv(x1), _fv(y1), _fv(x2), _fv(y2), _fv(width), r, g, b, a); 
 }
 
@@ -314,7 +314,7 @@ export function drawLine2d(x1: number, y1: number, x2: number, y2: number, width
  * @param b
  * @param a
  */
-export function drawRectRotated(x: number, y: number, width: number, height: number, rotation: number, r: number, g: number, b: number, a: number): any { 
+export function drawRectRotated(x: number, y: number, width: number, height: number, rotation: number, r: number, g: number, b: number, a: number): void { 
 	return _in(0x00000000, 0xec37c168, _fv(x), _fv(y), _fv(width), _fv(height), _fv(rotation), r, g, b, a); 
 }
 
@@ -322,23 +322,23 @@ export function drawRectRotated(x: number, y: number, width: number, height: num
  * Enables the editor runtime mode, changing game behavior to track entity metadata.
  * This function supports SDK infrastructure and is not intended to be used directly from your code.
  */
-export function enableEditorRuntime(): any { 
+export function enableEditorRuntime(): void { 
 	return _in(0x00000000, 0xc383871d); 
 }
 
-export function endFindObject(findHandle: number): any { 
+export function endFindObject(findHandle: number): void { 
 	return _in(0x00000000, 0xdeda4e50, findHandle); 
 }
 
-export function endFindPed(findHandle: number): any { 
+export function endFindPed(findHandle: number): void { 
 	return _in(0x00000000, 0x9615c2ad, findHandle); 
 }
 
-export function endFindPickup(findHandle: number): any { 
+export function endFindPickup(findHandle: number): void { 
 	return _in(0x00000000, 0x3c407d53, findHandle); 
 }
 
-export function endFindVehicle(findHandle: number): any { 
+export function endFindVehicle(findHandle: number): void { 
 	return _in(0x00000000, 0x9227415a, findHandle); 
 }
 
@@ -346,7 +346,7 @@ export function endFindVehicle(findHandle: number): any {
  * Enters cursor mode, suppressing mouse movement to the game and displaying a mouse cursor instead. This function supports
  * SDK infrastructure and is not intended to be used directly from your code.
  */
-export function enterCursorMode(): any { 
+export function enterCursorMode(): void { 
 	return _in(0x00000000, 0x0780da86); 
 }
 
@@ -365,7 +365,7 @@ export function experimentalLoadCloneCreate(data: string, objectId: number, tree
  * @param entity
  * @param data
  */
-export function experimentalLoadCloneSync(entity: number, data: string): any { 
+export function experimentalLoadCloneSync(entity: number, data: string): void { 
 	return _in(0x00000000, 0x6bc189ac, entity, _ts(data)); 
 }
 
@@ -385,51 +385,51 @@ export function experimentalSaveCloneSync(entity: number): string {
 	return _in(0x00000000, 0x38d19210, entity, _r, _s); 
 }
 
-export function findFirstObject(outEntity: number): [any, any] { 
+export function findFirstObject(outEntity: number): [number, number] { 
 	const [retval, outEntity_out] = _in(0x00000000, 0xfaa6cb5d, _ii(outEntity), _r, _ri);
-	return [retval as any, outEntity_out as number]; 
+	return [retval as number, outEntity_out as number]; 
 }
 
-export function findFirstPed(outEntity: number): [any, any] { 
+export function findFirstPed(outEntity: number): [number, number] { 
 	const [retval, outEntity_out] = _in(0x00000000, 0xfb012961, _ii(outEntity), _r, _ri);
-	return [retval as any, outEntity_out as number]; 
+	return [retval as number, outEntity_out as number]; 
 }
 
-export function findFirstPickup(outEntity: number): [any, any] { 
+export function findFirstPickup(outEntity: number): [number, number] { 
 	const [retval, outEntity_out] = _in(0x00000000, 0x3ff9d340, _ii(outEntity), _r, _ri);
-	return [retval as any, outEntity_out as number]; 
+	return [retval as number, outEntity_out as number]; 
 }
 
-export function findFirstVehicle(outEntity: number): [any, any] { 
+export function findFirstVehicle(outEntity: number): [number, number] { 
 	const [retval, outEntity_out] = _in(0x00000000, 0x15e55694, _ii(outEntity), _r, _ri);
-	return [retval as any, outEntity_out as number]; 
+	return [retval as number, outEntity_out as number]; 
 }
 
-export function findNextObject(findHandle: number, outEntity: number): [any, any] { 
-	const [retval, outEntity_out] = _in(0x00000000, 0x4e129dbf, findHandle, _ii(outEntity), _r, _ri);
-	return [retval as any, outEntity_out as number]; 
+export function findNextObject(findHandle: number, outEntity: number): [boolean, number] { 
+	const [retval, outEntity_out] = _in(0x00000000, 0x4e129dbf, findHandle, _ii(outEntity), _r);
+	return [retval as boolean, outEntity_out as number]; 
 }
 
-export function findNextPed(findHandle: number, outEntity: number): [any, any] { 
-	const [retval, outEntity_out] = _in(0x00000000, 0xab09b548, findHandle, _ii(outEntity), _r, _ri);
-	return [retval as any, outEntity_out as number]; 
+export function findNextPed(findHandle: number, outEntity: number): [boolean, number] { 
+	const [retval, outEntity_out] = _in(0x00000000, 0xab09b548, findHandle, _ii(outEntity), _r);
+	return [retval as boolean, outEntity_out as number]; 
 }
 
-export function findNextPickup(findHandle: number, outEntity: number): [any, any] { 
-	const [retval, outEntity_out] = _in(0x00000000, 0x4107ef0f, findHandle, _ii(outEntity), _r, _ri);
-	return [retval as any, outEntity_out as number]; 
+export function findNextPickup(findHandle: number, outEntity: number): [boolean, number] { 
+	const [retval, outEntity_out] = _in(0x00000000, 0x4107ef0f, findHandle, _ii(outEntity), _r);
+	return [retval as boolean, outEntity_out as number]; 
 }
 
-export function findNextVehicle(findHandle: number, outEntity: number): [any, any] { 
-	const [retval, outEntity_out] = _in(0x00000000, 0x8839120d, findHandle, _ii(outEntity), _r, _ri);
-	return [retval as any, outEntity_out as number]; 
+export function findNextVehicle(findHandle: number, outEntity: number): [boolean, number] { 
+	const [retval, outEntity_out] = _in(0x00000000, 0x8839120d, findHandle, _ii(outEntity), _r);
+	return [retval as boolean, outEntity_out as number]; 
 }
 
 /**
  * Forces the game snow pass to render.
  * @param enabled
  */
-export function forceSnowPass(enabled: boolean): any { 
+export function forceSnowPass(enabled: boolean): void { 
 	return _in(0x00000000, 0xe6e16170, enabled); 
 }
 
@@ -441,8 +441,8 @@ export function forceSnowPass(enabled: boolean): any {
  * [127, 42, 13, 37]
  * ```
  */
-export function getActivePlayers(): number { 
-	return _in(0x00000000, 0xcf143fb9, _r, _ri); 
+export function getActivePlayers(): any { 
+	return _in(0x00000000, 0xcf143fb9, _r, _ro); 
 }
 
 /**
@@ -452,8 +452,8 @@ export function getActivePlayers(): number {
  * [ 770, 1026, 1282, 1538, 1794, 2050, 2306, 2562, 2818, 3074, 3330, 3586, 3842, 4098, 4354, 4610, ...]
  * ```
  */
-export function getAllRopes(): number { 
-	return _in(0x00000000, 0x760a2d67, _r, _ri); 
+export function getAllRopes(): any { 
+	return _in(0x00000000, 0x760a2d67, _r, _ro); 
 }
 
 /**
@@ -467,8 +467,8 @@ export function getAllRopes(): number {
  * 
  * This native will not return vehicles that are unregistered (i.e from a resource being stopped) during runtime.
  */
-export function getAllVehicleModels(): number { 
-	return _in(0x00000000, 0xd7531645, _r, _ri); 
+export function getAllVehicleModels(): any { 
+	return _in(0x00000000, 0xd7531645, _r, _ro); 
 }
 
 /**
@@ -493,9 +493,9 @@ export function getAmbientVehicleRangeMultiplier(): number {
  * @param upVector
  * @param position
  */
-export function getCamMatrix(camera: number): [any, Vector3, Vector3, Vector3, any] { 
-	const [retval, rightVector_out, forwardVector_out, upVector_out, position_out] = _in(0x00000000, 0x8f57a89d, camera, _v, _v, _v, _v, _r, _ri);
-	return [retval as any, _mv(rightVector_out), _mv(forwardVector_out), _mv(upVector_out), _mv(position_out)]; 
+export function getCamMatrix(camera: number): [Vector3, Vector3, Vector3, Vector3] { 
+	const [rightVector_out, forwardVector_out, upVector_out, position_out] = _in(0x00000000, 0x8f57a89d, camera, _v, _v, _v, _v);
+	return [_mv(rightVector_out), _mv(forwardVector_out), _mv(upVector_out), _mv(position_out)]; 
 }
 
 /**
@@ -545,9 +545,9 @@ export function getEntityIndexFromMapdata(mapdata: number, entity: number): numb
  * @param mapdataHandle
  * @param entityHandle
  */
-export function getEntityMapdataOwner(entity: number): [any, number, any] { 
-	const [retval, mapdataHandle_out, entityHandle_out] = _in(0x00000000, 0xf6b815c5, entity, _i, _i, _r, _ri);
-	return [retval as any, mapdataHandle_out as number, entityHandle_out as number]; 
+export function getEntityMapdataOwner(entity: number): [boolean, number, number] { 
+	const [retval, mapdataHandle_out, entityHandle_out] = _in(0x00000000, 0xf6b815c5, entity, _i, _i, _r);
+	return [retval as boolean, mapdataHandle_out as number, entityHandle_out as number]; 
 }
 
 /**
@@ -593,18 +593,18 @@ export function getExternalKvpString(resource: string, key: string): string {
  * *   `CPickup`: Pickups.
  * @param poolName
  */
-export function getGamePool(poolName: string): number { 
-	return _in(0x00000000, 0x2b9d4f50, _ts(poolName), _r, _ri); 
+export function getGamePool(poolName: string): any { 
+	return _in(0x00000000, 0x2b9d4f50, _ts(poolName), _r, _ro); 
 }
 
-export function getInteriorEntitiesExtents(interiorId: number): [any, number, number, number, number, number, any] { 
-	const [retval, bbMinX_out, bbMinY_out, bbMinZ_out, bbMaxX_out, bbMaxY_out, bbMaxZ_out] = _in(0x00000000, 0x322b1192, interiorId, _f, _f, _f, _f, _f, _f, _r, _ri);
-	return [retval as any, bbMinX_out as number, bbMinY_out as number, bbMinZ_out as number, bbMaxX_out as number, bbMaxY_out as number, bbMaxZ_out as number]; 
+export function getInteriorEntitiesExtents(interiorId: number): [number, number, number, number, number, number] { 
+	const [bbMinX_out, bbMinY_out, bbMinZ_out, bbMaxX_out, bbMaxY_out, bbMaxZ_out] = _in(0x00000000, 0x322b1192, interiorId, _f, _f, _f, _f, _f, _f);
+	return [bbMinX_out as number, bbMinY_out as number, bbMinZ_out as number, bbMaxX_out as number, bbMaxY_out as number, bbMaxZ_out as number]; 
 }
 
-export function getInteriorPortalCornerPosition(interiorId: number, portalIndex: number, cornerIndex: number): [any, number, number, any] { 
-	const [retval, posX_out, posY_out, posZ_out] = _in(0x00000000, 0xf772bb2c, interiorId, portalIndex, cornerIndex, _f, _f, _f, _r, _ri);
-	return [retval as any, posX_out as number, posY_out as number, posZ_out as number]; 
+export function getInteriorPortalCornerPosition(interiorId: number, portalIndex: number, cornerIndex: number): [number, number, number] { 
+	const [posX_out, posY_out, posZ_out] = _in(0x00000000, 0xf772bb2c, interiorId, portalIndex, cornerIndex, _f, _f, _f);
+	return [posX_out as number, posY_out as number, posZ_out as number]; 
 }
 
 export function getInteriorPortalCount(interiorId: number): number { 
@@ -623,14 +623,14 @@ export function getInteriorPortalEntityFlag(interiorId: number, portalIndex: num
 	return _in(0x00000000, 0x9da2e811, interiorId, portalIndex, entityIndex, _r, _ri); 
 }
 
-export function getInteriorPortalEntityPosition(interiorId: number, portalIndex: number, entityIndex: number): [any, number, number, any] { 
-	const [retval, posX_out, posY_out, posZ_out] = _in(0x00000000, 0x9b7ab83c, interiorId, portalIndex, entityIndex, _f, _f, _f, _r, _ri);
-	return [retval as any, posX_out as number, posY_out as number, posZ_out as number]; 
+export function getInteriorPortalEntityPosition(interiorId: number, portalIndex: number, entityIndex: number): [number, number, number] { 
+	const [posX_out, posY_out, posZ_out] = _in(0x00000000, 0x9b7ab83c, interiorId, portalIndex, entityIndex, _f, _f, _f);
+	return [posX_out as number, posY_out as number, posZ_out as number]; 
 }
 
-export function getInteriorPortalEntityRotation(interiorId: number, portalIndex: number, entityIndex: number): [any, number, number, number, any] { 
-	const [retval, rotX_out, rotY_out, rotZ_out, rotW_out] = _in(0x00000000, 0x9f9ceb63, interiorId, portalIndex, entityIndex, _f, _f, _f, _f, _r, _ri);
-	return [retval as any, rotX_out as number, rotY_out as number, rotZ_out as number, rotW_out as number]; 
+export function getInteriorPortalEntityRotation(interiorId: number, portalIndex: number, entityIndex: number): [number, number, number, number] { 
+	const [rotX_out, rotY_out, rotZ_out, rotW_out] = _in(0x00000000, 0x9f9ceb63, interiorId, portalIndex, entityIndex, _f, _f, _f, _f);
+	return [rotX_out as number, rotY_out as number, rotZ_out as number, rotW_out as number]; 
 }
 
 export function getInteriorPortalFlag(interiorId: number, portalIndex: number): number { 
@@ -645,18 +645,18 @@ export function getInteriorPortalRoomTo(interiorId: number, portalIndex: number)
 	return _in(0x00000000, 0x3f47f0e8, interiorId, portalIndex, _r, _ri); 
 }
 
-export function getInteriorPosition(interiorId: number): [any, number, number, any] { 
-	const [retval, posX_out, posY_out, posZ_out] = _in(0x00000000, 0x77a435b0, interiorId, _f, _f, _f, _r, _ri);
-	return [retval as any, posX_out as number, posY_out as number, posZ_out as number]; 
+export function getInteriorPosition(interiorId: number): [number, number, number] { 
+	const [posX_out, posY_out, posZ_out] = _in(0x00000000, 0x77a435b0, interiorId, _f, _f, _f);
+	return [posX_out as number, posY_out as number, posZ_out as number]; 
 }
 
 export function getInteriorRoomCount(interiorId: number): number { 
 	return _in(0x00000000, 0xa2737c2c, interiorId, _r, _ri); 
 }
 
-export function getInteriorRoomExtents(interiorId: number, roomIndex: number): [any, number, number, number, number, number, any] { 
-	const [retval, bbMinX_out, bbMinY_out, bbMinZ_out, bbMaxX_out, bbMaxY_out, bbMaxZ_out] = _in(0x00000000, 0xf9e795dd, interiorId, roomIndex, _f, _f, _f, _f, _f, _f, _r, _ri);
-	return [retval as any, bbMinX_out as number, bbMinY_out as number, bbMinZ_out as number, bbMaxX_out as number, bbMaxY_out as number, bbMaxZ_out as number]; 
+export function getInteriorRoomExtents(interiorId: number, roomIndex: number): [number, number, number, number, number, number] { 
+	const [bbMinX_out, bbMinY_out, bbMinZ_out, bbMaxX_out, bbMaxY_out, bbMaxZ_out] = _in(0x00000000, 0xf9e795dd, interiorId, roomIndex, _f, _f, _f, _f, _f, _f);
+	return [bbMinX_out as number, bbMinY_out as number, bbMinZ_out as number, bbMaxX_out as number, bbMaxY_out as number, bbMaxZ_out as number]; 
 }
 
 export function getInteriorRoomFlag(interiorId: number, roomIndex: number): number { 
@@ -675,9 +675,9 @@ export function getInteriorRoomTimecycle(interiorId: number, roomIndex: number):
 	return _in(0x00000000, 0x82ba3f88, interiorId, roomIndex, _r, _ri); 
 }
 
-export function getInteriorRotation(interiorId: number): [any, number, number, number, any] { 
-	const [retval, rotx_out, rotY_out, rotZ_out, rotW_out] = _in(0x00000000, 0x5a039998, interiorId, _f, _f, _f, _f, _r, _ri);
-	return [retval as any, rotx_out as number, rotY_out as number, rotZ_out as number, rotW_out as number]; 
+export function getInteriorRotation(interiorId: number): [number, number, number, number] { 
+	const [rotx_out, rotY_out, rotZ_out, rotW_out] = _in(0x00000000, 0x5a039998, interiorId, _f, _f, _f, _f);
+	return [rotx_out as number, rotY_out as number, rotZ_out as number, rotW_out as number]; 
 }
 
 /**
@@ -689,9 +689,9 @@ export function getInteriorRotation(interiorId: number): [any, number, number, n
  * @param tilesX
  * @param tilesY
  */
-export function getMapZoomDataLevel(index: number): [any, number, number, number, number, any] { 
-	const [retval, zoomScale_out, zoomSpeed_out, scrollSpeed_out, tilesX_out, tilesY_out] = _in(0x00000000, 0x1363a998, index, _f, _f, _f, _f, _f, _r, _ri);
-	return [retval as any, zoomScale_out as number, zoomSpeed_out as number, scrollSpeed_out as number, tilesX_out as number, tilesY_out as number]; 
+export function getMapZoomDataLevel(index: number): [boolean, number, number, number, number, number] { 
+	const [retval, zoomScale_out, zoomSpeed_out, scrollSpeed_out, tilesX_out, tilesY_out] = _in(0x00000000, 0x1363a998, index, _f, _f, _f, _f, _f, _r);
+	return [retval as boolean, zoomScale_out as number, zoomSpeed_out as number, scrollSpeed_out as number, tilesX_out as number, tilesY_out as number]; 
 }
 
 /**
@@ -701,9 +701,9 @@ export function getMapZoomDataLevel(index: number): [any, number, number, number
  * @param entityInternalIdx
  * @param entityHandle
  */
-export function getMapdataEntityHandle(mapDataHash: number, entityInternalIdx: number, entityHandle: number): [any, any] { 
-	const [retval, entityHandle_out] = _in(0x00000000, 0x30aa6911, mapDataHash, entityInternalIdx, _ii(entityHandle), _r, _ri);
-	return [retval as any, entityHandle_out as number]; 
+export function getMapdataEntityHandle(mapDataHash: number, entityInternalIdx: number, entityHandle: number): [boolean, number] { 
+	const [retval, entityHandle_out] = _in(0x00000000, 0x30aa6911, mapDataHash, entityInternalIdx, _ii(entityHandle), _r);
+	return [retval as boolean, entityHandle_out as number]; 
 }
 
 /**
@@ -739,9 +739,9 @@ export function getNetworkWalkMode(): boolean {
 	return _in(0x00000000, 0x2cafd5e9, _r); 
 }
 
-export function getNuiCursorPosition(): [any, number, any] { 
-	const [retval, x_out, y_out] = _in(0x00000000, 0xbdba226f, _i, _i, _r, _ri);
-	return [retval as any, x_out as number, y_out as number]; 
+export function getNuiCursorPosition(): [number, number] { 
+	const [x_out, y_out] = _in(0x00000000, 0xbdba226f, _i, _i);
+	return [x_out as number, y_out as number]; 
 }
 
 /**
@@ -763,8 +763,8 @@ export function getParkedVehicleDensityMultiplier(): number {
  * This command will return undefined data if invoked on a remote player ped.
  * @param ped
  */
-export function getPedDecorations(ped: number): number { 
-	return _in(0x00000000, 0x7cce1163, ped, _r, _ri); 
+export function getPedDecorations(ped: number): any { 
+	return _in(0x00000000, 0x7cce1163, ped, _r, _ro); 
 }
 
 /**
@@ -817,9 +817,9 @@ export function getPedHairHighlightColor(ped: number): number {
  * @param secondColour
  * @param overlayOpacity
  */
-export function getPedHeadOverlayData(ped: number, index: number): [any, number, number, number, number, any] { 
-	const [retval, overlayValue_out, colourType_out, firstColour_out, secondColour_out, overlayOpacity_out] = _in(0x00000000, 0xc46ee605, ped, index, _i, _i, _i, _i, _f, _r, _ri);
-	return [retval as any, overlayValue_out as number, colourType_out as number, firstColour_out as number, secondColour_out as number, overlayOpacity_out as number]; 
+export function getPedHeadOverlayData(ped: number, index: number): [boolean, number, number, number, number, number] { 
+	const [retval, overlayValue_out, colourType_out, firstColour_out, secondColour_out, overlayOpacity_out] = _in(0x00000000, 0xc46ee605, ped, index, _i, _i, _i, _i, _f, _r);
+	return [retval as boolean, overlayValue_out as number, colourType_out as number, firstColour_out as number, secondColour_out as number, overlayOpacity_out as number]; 
 }
 
 /**
@@ -1321,9 +1321,9 @@ export function getVehicleWheelieState(vehicle: number): number {
  * @param green
  * @param blue
  */
-export function getVehicleXenonLightsCustomColor(vehicle: number): [any, number, number, any] { 
-	const [retval, red_out, green_out, blue_out] = _in(0x00000000, 0xc715f730, vehicle, _i, _i, _i, _r, _ri);
-	return [retval as any, red_out as number, green_out as number, blue_out as number]; 
+export function getVehicleXenonLightsCustomColor(vehicle: number): [boolean, number, number, number] { 
+	const [retval, red_out, green_out, blue_out] = _in(0x00000000, 0xc715f730, vehicle, _i, _i, _i, _r);
+	return [retval as boolean, red_out as number, green_out as number, blue_out as number]; 
 }
 
 /**
@@ -1413,9 +1413,9 @@ export function getWeaponRecoilShakeAmplitude(weaponHash: number): number {
  * @param worldVector
  * @param normalVector
  */
-export function getWorldCoordFromScreenCoord(screenX: number, screenY: number): [any, Vector3, any] { 
-	const [retval, worldVector_out, normalVector_out] = _in(0x00000000, 0xc81d0659, _fv(screenX), _fv(screenY), _v, _v, _r, _ri);
-	return [retval as any, _mv(worldVector_out), _mv(normalVector_out)]; 
+export function getWorldCoordFromScreenCoord(screenX: number, screenY: number): [Vector3, Vector3] { 
+	const [worldVector_out, normalVector_out] = _in(0x00000000, 0xc81d0659, _fv(screenX), _fv(screenY), _v, _v);
+	return [_mv(worldVector_out), _mv(normalVector_out)]; 
 }
 
 /**
@@ -1506,7 +1506,7 @@ export function isVehicleWanted(vehicle: number): boolean {
 /**
  * Leaves cursor mode. This function supports SDK infrastructure and is not intended to be used directly from your code.
  */
-export function leaveCursorMode(): any { 
+export function leaveCursorMode(): void { 
 	return _in(0x00000000, 0xadecf19e); 
 }
 
@@ -1514,7 +1514,7 @@ export function leaveCursorMode(): any {
  * Starts listening to the specified channel, when available.
  * @param channel
  */
-export function mumbleAddVoiceChannelListen(channel: number): any { 
+export function mumbleAddVoiceChannelListen(channel: number): void { 
 	return _in(0x00000000, 0xc79f44bf, channel); 
 }
 
@@ -1523,7 +1523,7 @@ export function mumbleAddVoiceChannelListen(channel: number): any {
  * @param targetId
  * @param channel
  */
-export function mumbleAddVoiceTargetChannel(targetId: number, channel: number): any { 
+export function mumbleAddVoiceTargetChannel(targetId: number, channel: number): void { 
 	return _in(0x00000000, 0x4d386c9e, targetId, channel); 
 }
 
@@ -1532,7 +1532,7 @@ export function mumbleAddVoiceTargetChannel(targetId: number, channel: number): 
  * @param targetId
  * @param player
  */
-export function mumbleAddVoiceTargetPlayer(targetId: number, player: number): any { 
+export function mumbleAddVoiceTargetPlayer(targetId: number, player: number): void { 
 	return _in(0x00000000, 0x32c5355a, targetId, player); 
 }
 
@@ -1541,11 +1541,11 @@ export function mumbleAddVoiceTargetPlayer(targetId: number, player: number): an
  * @param targetId
  * @param serverId
  */
-export function mumbleAddVoiceTargetPlayerByServerId(targetId: number, serverId: number): any { 
+export function mumbleAddVoiceTargetPlayerByServerId(targetId: number, serverId: number): void { 
 	return _in(0x00000000, 0x25f2b65f, targetId, serverId); 
 }
 
-export function mumbleClearVoiceChannel(): any { 
+export function mumbleClearVoiceChannel(): void { 
 	return _in(0x00000000, 0xbf847807); 
 }
 
@@ -1553,7 +1553,7 @@ export function mumbleClearVoiceChannel(): any {
  * Clears the target list for the specified Mumble voice target ID.
  * @param targetId
  */
-export function mumbleClearVoiceTarget(targetId: number): any { 
+export function mumbleClearVoiceTarget(targetId: number): void { 
 	return _in(0x00000000, 0x8555dcba, targetId); 
 }
 
@@ -1561,7 +1561,7 @@ export function mumbleClearVoiceTarget(targetId: number): any {
  * Clears channels from the target list for the specified Mumble voice target ID.
  * @param targetId
  */
-export function mumbleClearVoiceTargetChannels(targetId: number): any { 
+export function mumbleClearVoiceTargetChannels(targetId: number): void { 
 	return _in(0x00000000, 0x5ea72e76, targetId); 
 }
 
@@ -1569,7 +1569,7 @@ export function mumbleClearVoiceTargetChannels(targetId: number): any {
  * Clears players from the target list for the specified Mumble voice target ID.
  * @param targetId
  */
-export function mumbleClearVoiceTargetPlayers(targetId: number): any { 
+export function mumbleClearVoiceTargetPlayers(targetId: number): void { 
 	return _in(0x00000000, 0x912e21da, targetId); 
 }
 
@@ -1605,7 +1605,7 @@ export function mumbleIsPlayerTalking(player: number): boolean {
  * Stops listening to the specified channel.
  * @param channel
  */
-export function mumbleRemoveVoiceChannelListen(channel: number): any { 
+export function mumbleRemoveVoiceChannelListen(channel: number): void { 
 	return _in(0x00000000, 0x231523b7, channel); 
 }
 
@@ -1616,7 +1616,7 @@ export function mumbleRemoveVoiceChannelListen(channel: number): any {
  * @param targetId
  * @param channel
  */
-export function mumbleRemoveVoiceTargetChannel(targetId: number, channel: number): any { 
+export function mumbleRemoveVoiceTargetChannel(targetId: number, channel: number): void { 
 	return _in(0x00000000, 0x268db867, targetId, channel); 
 }
 
@@ -1627,7 +1627,7 @@ export function mumbleRemoveVoiceTargetChannel(targetId: number, channel: number
  * @param targetId
  * @param player
  */
-export function mumbleRemoveVoiceTargetPlayer(targetId: number, player: number): any { 
+export function mumbleRemoveVoiceTargetPlayer(targetId: number, player: number): void { 
 	return _in(0x00000000, 0x88cd646f, targetId, player); 
 }
 
@@ -1638,11 +1638,11 @@ export function mumbleRemoveVoiceTargetPlayer(targetId: number, player: number):
  * @param targetId
  * @param serverId
  */
-export function mumbleRemoveVoiceTargetPlayerByServerId(targetId: number, serverId: number): any { 
+export function mumbleRemoveVoiceTargetPlayerByServerId(targetId: number, serverId: number): void { 
 	return _in(0x00000000, 0x930bd34b, targetId, serverId); 
 }
 
-export function mumbleSetActive(state: boolean): any { 
+export function mumbleSetActive(state: boolean): void { 
 	return _in(0x00000000, 0xd932a3f3, state); 
 }
 
@@ -1650,7 +1650,7 @@ export function mumbleSetActive(state: boolean): any {
  * Sets the current input distance. The player will be able to talk to other players within this distance.
  * @param distance
  */
-export function mumbleSetAudioInputDistance(distance: number): any { 
+export function mumbleSetAudioInputDistance(distance: number): void { 
 	return _in(0x00000000, 0x1b1052e2, _fv(distance)); 
 }
 
@@ -1665,7 +1665,7 @@ export function mumbleSetAudioInputDistance(distance: number): any {
  * | \`music\` | Disable noise suppression and high pass filter |
  * @param intentHash
  */
-export function mumbleSetAudioInputIntent(intentHash: number): any { 
+export function mumbleSetAudioInputIntent(intentHash: number): void { 
 	return _in(0x00000000, 0x6383526b, intentHash); 
 }
 
@@ -1673,7 +1673,7 @@ export function mumbleSetAudioInputIntent(intentHash: number): any {
  * Sets the current output distance. The player will be able to hear other players talking within this distance.
  * @param distance
  */
-export function mumbleSetAudioOutputDistance(distance: number): any { 
+export function mumbleSetAudioOutputDistance(distance: number): void { 
 	return _in(0x00000000, 0x74c597d9, _fv(distance)); 
 }
 
@@ -1682,7 +1682,7 @@ export function mumbleSetAudioOutputDistance(distance: number): any {
  * @param address
  * @param port
  */
-export function mumbleSetServerAddress(address: string, port: number): any { 
+export function mumbleSetServerAddress(address: string, port: number): void { 
 	return _in(0x00000000, 0xe6eb2cd8, _ts(address), port); 
 }
 
@@ -1691,15 +1691,15 @@ export function mumbleSetServerAddress(address: string, port: number): any {
  * @param serverId
  * @param submixId
  */
-export function mumbleSetSubmixForServerId(serverId: number, submixId: number): any { 
+export function mumbleSetSubmixForServerId(serverId: number, submixId: number): void { 
 	return _in(0x00000000, 0xfe3a3054, serverId, submixId); 
 }
 
-export function mumbleSetTalkerProximity(value: number): any { 
+export function mumbleSetTalkerProximity(value: number): void { 
 	return _in(0x00000000, 0x74e927b0, _fv(value)); 
 }
 
-export function mumbleSetVoiceChannel(channel: number): any { 
+export function mumbleSetVoiceChannel(channel: number): void { 
 	return _in(0x00000000, 0x8737eee8, channel); 
 }
 
@@ -1707,7 +1707,7 @@ export function mumbleSetVoiceChannel(channel: number): any {
  * Sets the current Mumble voice target ID to broadcast voice to.
  * @param targetId
  */
-export function mumbleSetVoiceTarget(targetId: number): any { 
+export function mumbleSetVoiceTarget(targetId: number): void { 
 	return _in(0x00000000, 0x960a4a95, targetId); 
 }
 
@@ -1718,7 +1718,7 @@ export function mumbleSetVoiceTarget(targetId: number): any {
  * @param player
  * @param volume
  */
-export function mumbleSetVolumeOverride(player: number, volume: number): any { 
+export function mumbleSetVolumeOverride(player: number, volume: number): void { 
 	return _in(0x00000000, 0x61c309e3, player, _fv(volume)); 
 }
 
@@ -1727,7 +1727,7 @@ export function mumbleSetVolumeOverride(player: number, volume: number): any {
  * @param serverId
  * @param volume
  */
-export function mumbleSetVolumeOverrideByServerId(serverId: number, volume: number): any { 
+export function mumbleSetVolumeOverrideByServerId(serverId: number, volume: number): void { 
 	return _in(0x00000000, 0xce8e25b4, serverId, _fv(volume)); 
 }
 
@@ -1737,7 +1737,7 @@ export function mumbleSetVolumeOverrideByServerId(serverId: number, volume: numb
  * Note this flag is not replicated automatically, you will have to manually do so.
  * @param flag
  */
-export function overridePedsCanStandOnTopFlag(flag: boolean): any { 
+export function overridePedsCanStandOnTopFlag(flag: boolean): void { 
 	return _in(0x00000000, 0x90a9e0b2, flag); 
 }
 
@@ -1745,7 +1745,7 @@ export function overridePedsCanStandOnTopFlag(flag: boolean): any {
  * Replaces the `popgroups` (CPopGroupList) meta file with the file in the specified path.
  * @param path
  */
-export function overridePopGroups(path: string): any { 
+export function overridePopGroups(path: string): void { 
 	return _in(0x00000000, 0xd3bc438f, _ts(path)); 
 }
 
@@ -1756,7 +1756,7 @@ export function overridePopGroups(path: string): any {
  * @param vehicle
  * @param can
  */
-export function overrideVehiclePedsCanStandOnTopFlag(vehicle: number, can: boolean): any { 
+export function overrideVehiclePedsCanStandOnTopFlag(vehicle: number, can: boolean): void { 
 	return _in(0x00000000, 0x7fa03e76, vehicle, can); 
 }
 
@@ -1766,7 +1766,7 @@ export function overrideVehiclePedsCanStandOnTopFlag(vehicle: number, can: boole
  * Registers a set of archetypes with the game engine. These should match `CBaseArchetypeDef` class information from the game.
  * @param factory
  */
-export function registerArchetypes(factory: any): any { 
+export function registerArchetypes(factory: any): void { 
 	return _in(0x00000000, 0x3c2f9037, _mfr(factory)); 
 }
 
@@ -1777,7 +1777,7 @@ export function registerArchetypes(factory: any): any {
  * At this time, this function **should not be used in a live environment**.
  * @param factory
  */
-export function registerEntities(factory: any): any { 
+export function registerEntities(factory: any): void { 
 	return _in(0x00000000, 0x410da7d3, _mfr(factory)); 
 }
 
@@ -1786,7 +1786,7 @@ export function registerEntities(factory: any): any {
  * The .gfx file has to be registered with the streamer already.
  * @param fileName
  */
-export function registerFontFile(fileName: string): any { 
+export function registerFontFile(fileName: string): void { 
 	return _in(0x00000000, 0x01b3a363, _ts(fileName)); 
 }
 
@@ -1807,19 +1807,19 @@ export function registerFontId(fontName: string): number {
  * @param defaultMapper
  * @param defaultParameter
  */
-export function registerKeyMapping(commandString: string, description: string, defaultMapper: string, defaultParameter: string): any { 
+export function registerKeyMapping(commandString: string, description: string, defaultMapper: string, defaultParameter: string): void { 
 	return _in(0x00000000, 0xd7664fd1, _ts(commandString), _ts(description), _ts(defaultMapper), _ts(defaultParameter)); 
 }
 
-export function registerNuiCallback(callbackType: string, callback: any): any { 
+export function registerNuiCallback(callbackType: string, callback: any): void { 
 	return _in(0x00000000, 0xc59b980c, _ts(callbackType), _mfr(callback)); 
 }
 
-export function registerNuiCallbackType(callbackType: string): any { 
+export function registerNuiCallbackType(callbackType: string): void { 
 	return _in(0x00000000, 0xcd03cda9, _ts(callbackType)); 
 }
 
-export function registerRawNuiCallback(callbackType: string, callback: any): any { 
+export function registerRawNuiCallback(callbackType: string, callback: any): void { 
 	return _in(0x00000000, 0xa8ae9c2f, _ts(callbackType), _mfr(callback)); 
 }
 
@@ -1831,7 +1831,7 @@ export function registerRawNuiCallback(callbackType: string, callback: any): any
  * @param fileName
  * @param cacheString
  */
-export function registerStreamingFileFromCache(resourceName: string, fileName: string, cacheString: string): any { 
+export function registerStreamingFileFromCache(resourceName: string, fileName: string, cacheString: string): void { 
 	return _in(0x00000000, 0xcead2d4b, _ts(resourceName), _ts(fileName), _ts(cacheString)); 
 }
 
@@ -1841,7 +1841,7 @@ export function registerStreamingFileFromCache(resourceName: string, fileName: s
  * Registers a KVP value as an asset with the GTA streaming module system. This function currently won't work.
  * @param kvsKey
  */
-export function registerStreamingFileFromKvs(kvsKey: string): any { 
+export function registerStreamingFileFromKvs(kvsKey: string): void { 
 	return _in(0x00000000, 0x1493dcc1, _ts(kvsKey)); 
 }
 
@@ -1854,7 +1854,7 @@ export function registerStreamingFileFromKvs(kvsKey: string): any {
  * @param registerAs
  * @param url
  */
-export function registerStreamingFileFromUrl(registerAs: string, url: string): any { 
+export function registerStreamingFileFromUrl(registerAs: string, url: string): void { 
 	return _in(0x00000000, 0xf44bfb95, _ts(registerAs), _ts(url)); 
 }
 
@@ -1863,7 +1863,7 @@ export function registerStreamingFileFromUrl(registerAs: string, url: string): a
  * See CREATE_DRY_VOLUME for more info
  * @param handle
  */
-export function removeDryVolume(handle: number): any { 
+export function removeDryVolume(handle: number): void { 
 	return _in(0x00000000, 0x7bcaa6e7, handle); 
 }
 
@@ -1872,7 +1872,7 @@ export function removeDryVolume(handle: number): any {
  * @param origTxd
  * @param origTxn
  */
-export function removeReplaceTexture(origTxd: string, origTxn: string): any { 
+export function removeReplaceTexture(origTxd: string, origTxn: string): void { 
 	return _in(0x00000000, 0xa896b20a, _ts(origTxd), _ts(origTxn)); 
 }
 
@@ -1898,7 +1898,7 @@ export function requestResourceFileSet(setName: string): boolean {
 /**
  * Resets parameters which is used by the game for checking is ped needs to fly through windscreen after a crash to default values.
  */
-export function resetFlyThroughWindscreenParams(): any { 
+export function resetFlyThroughWindscreenParams(): void { 
 	return _in(0x00000000, 0x6d712937); 
 }
 
@@ -1906,7 +1906,7 @@ export function resetFlyThroughWindscreenParams(): any {
  * Resets values from the zoom level data by index to defaults from mapzoomdata.meta.
  * @param index
  */
-export function resetMapZoomDataLevel(index: number): any { 
+export function resetMapZoomDataLevel(index: number): void { 
 	return _in(0x00000000, 0x11a5b7ed, index); 
 }
 
@@ -1924,7 +1924,7 @@ export function resetMapdataEntityMatrix(mapDataHash: number, entityInternalIdx:
  * Restores an overridden ped model personality type to the default value.
  * @param modelHash
  */
-export function resetPedModelPersonality(modelHash: number): any { 
+export function resetPedModelPersonality(modelHash: number): void { 
 	return _in(0x00000000, 0x79a12861, modelHash); 
 }
 
@@ -1934,7 +1934,7 @@ export function resetPedModelPersonality(modelHash: number): any {
  * Note this flag is not replicated automatically, you will have to manually do so.
  * @param vehicle
  */
-export function resetVehiclePedsCanStandOnTopFlag(vehicle: number): any { 
+export function resetVehiclePedsCanStandOnTopFlag(vehicle: number): void { 
 	return _in(0x00000000, 0xdf62cfe2, vehicle); 
 }
 
@@ -1963,7 +1963,7 @@ export function selectEntityAtPos(fracX: number, fracY: number, hitFlags: number
  * @param duiObject
  * @param jsonString
  */
-export function sendDuiMessage(duiObject: any, jsonString: string): any { 
+export function sendDuiMessage(duiObject: any, jsonString: string): void { 
 	return _in(0x00000000, 0xcd380da9, duiObject, _ts(jsonString)); 
 }
 
@@ -1972,7 +1972,7 @@ export function sendDuiMessage(duiObject: any, jsonString: string): any {
  * @param duiObject
  * @param button
  */
-export function sendDuiMouseDown(duiObject: any, button: string): any { 
+export function sendDuiMouseDown(duiObject: any, button: string): void { 
 	return _in(0x00000000, 0x5d01f191, duiObject, _ts(button)); 
 }
 
@@ -1982,7 +1982,7 @@ export function sendDuiMouseDown(duiObject: any, button: string): any {
  * @param x
  * @param y
  */
-export function sendDuiMouseMove(duiObject: any, x: number, y: number): any { 
+export function sendDuiMouseMove(duiObject: any, x: number, y: number): void { 
 	return _in(0x00000000, 0xd9d7a0aa, duiObject, x, y); 
 }
 
@@ -1991,7 +1991,7 @@ export function sendDuiMouseMove(duiObject: any, x: number, y: number): any {
  * @param duiObject
  * @param button
  */
-export function sendDuiMouseUp(duiObject: any, button: string): any { 
+export function sendDuiMouseUp(duiObject: any, button: string): void { 
 	return _in(0x00000000, 0x1d735b93, duiObject, _ts(button)); 
 }
 
@@ -2001,7 +2001,7 @@ export function sendDuiMouseUp(duiObject: any, button: string): any {
  * @param deltaY
  * @param deltaX
  */
-export function sendDuiMouseWheel(duiObject: any, deltaY: number, deltaX: number): any { 
+export function sendDuiMouseWheel(duiObject: any, deltaY: number, deltaX: number): void { 
 	return _in(0x00000000, 0x2d62133a, duiObject, deltaY, deltaX); 
 }
 
@@ -2023,7 +2023,7 @@ export function sendNuiMessage(jsonString: string): boolean {
  * To turn off, set value to 0
  * @param value
  */
-export function setAimCooldown(value: number): any { 
+export function setAimCooldown(value: number): void { 
 	return _in(0x00000000, 0xa42a3dbf, value); 
 }
 
@@ -2034,7 +2034,7 @@ export function setAimCooldown(value: number): any {
  * @param paramIndex
  * @param paramValue
  */
-export function setAudioSubmixEffectParamFloat(submixId: number, effectSlot: number, paramIndex: number, paramValue: number): any { 
+export function setAudioSubmixEffectParamFloat(submixId: number, effectSlot: number, paramIndex: number, paramValue: number): void { 
 	return _in(0x00000000, 0x9a209b3c, submixId, effectSlot, paramIndex, _fv(paramValue)); 
 }
 
@@ -2045,7 +2045,7 @@ export function setAudioSubmixEffectParamFloat(submixId: number, effectSlot: num
  * @param paramIndex
  * @param paramValue
  */
-export function setAudioSubmixEffectParamInt(submixId: number, effectSlot: number, paramIndex: number, paramValue: number): any { 
+export function setAudioSubmixEffectParamInt(submixId: number, effectSlot: number, paramIndex: number, paramValue: number): void { 
 	return _in(0x00000000, 0x77fae2b8, submixId, effectSlot, paramIndex, paramValue); 
 }
 
@@ -2068,7 +2068,7 @@ export function setAudioSubmixEffectParamInt(submixId: number, effectSlot: numbe
  * @param submixId
  * @param effectSlot
  */
-export function setAudioSubmixEffectRadioFx(submixId: number, effectSlot: number): any { 
+export function setAudioSubmixEffectRadioFx(submixId: number, effectSlot: number): void { 
 	return _in(0x00000000, 0xaaa94d53, submixId, effectSlot); 
 }
 
@@ -2086,7 +2086,7 @@ export function setAudioSubmixEffectRadioFx(submixId: number, effectSlot: number
  * @param channel5Volume
  * @param channel6Volume
  */
-export function setAudioSubmixOutputVolumes(submixId: number, outputSlot: number, frontLeftVolume: number, frontRightVolume: number, rearLeftVolume: number, rearRightVolume: number, channel5Volume: number, channel6Volume: number): any { 
+export function setAudioSubmixOutputVolumes(submixId: number, outputSlot: number, frontLeftVolume: number, frontRightVolume: number, rearLeftVolume: number, rearRightVolume: number, channel5Volume: number, channel6Volume: number): void { 
 	return _in(0x00000000, 0x825dc0d1, submixId, outputSlot, _fv(frontLeftVolume), _fv(frontRightVolume), _fv(rearLeftVolume), _fv(rearRightVolume), _fv(channel5Volume), _fv(channel6Volume)); 
 }
 
@@ -2113,7 +2113,7 @@ export function setCursorLocation(x: number, y: number): boolean {
  * @param plateIndex
  * @param pattern
  */
-export function setDefaultVehicleNumberPlateTextPattern(plateIndex: number, pattern: string): any { 
+export function setDefaultVehicleNumberPlateTextPattern(plateIndex: number, pattern: string): void { 
 	return _in(0x00000000, 0x79780fd2, plateIndex, _ts(pattern)); 
 }
 
@@ -2121,7 +2121,7 @@ export function setDefaultVehicleNumberPlateTextPattern(plateIndex: number, patt
  * This native sets the app id for the discord rich presence implementation.
  * @param appId
  */
-export function setDiscordAppId(appId: string): any { 
+export function setDiscordAppId(appId: string): void { 
 	return _in(0x00000000, 0x6a02254d, _ts(appId)); 
 }
 
@@ -2131,7 +2131,7 @@ export function setDiscordAppId(appId: string): any {
  * @param label
  * @param url
  */
-export function setDiscordRichPresenceAction(index: number, label: string, url: string): any { 
+export function setDiscordRichPresenceAction(index: number, label: string, url: string): void { 
 	return _in(0x00000000, 0xcbbc3fac, index, _ts(label), _ts(url)); 
 }
 
@@ -2139,7 +2139,7 @@ export function setDiscordRichPresenceAction(index: number, label: string, url: 
  * This native sets the image asset for the discord rich presence implementation.
  * @param assetName
  */
-export function setDiscordRichPresenceAsset(assetName: string): any { 
+export function setDiscordRichPresenceAsset(assetName: string): void { 
 	return _in(0x00000000, 0x53dfd530, _ts(assetName)); 
 }
 
@@ -2147,7 +2147,7 @@ export function setDiscordRichPresenceAsset(assetName: string): any {
  * This native sets the small image asset for the discord rich presence implementation.
  * @param assetName
  */
-export function setDiscordRichPresenceAssetSmall(assetName: string): any { 
+export function setDiscordRichPresenceAssetSmall(assetName: string): void { 
 	return _in(0x00000000, 0xf61d04c4, _ts(assetName)); 
 }
 
@@ -2155,7 +2155,7 @@ export function setDiscordRichPresenceAssetSmall(assetName: string): any {
  * This native sets the hover text of the small image asset for the discord rich presence implementation.
  * @param text
  */
-export function setDiscordRichPresenceAssetSmallText(text: string): any { 
+export function setDiscordRichPresenceAssetSmallText(text: string): void { 
 	return _in(0x00000000, 0x35e62b6a, _ts(text)); 
 }
 
@@ -2163,7 +2163,7 @@ export function setDiscordRichPresenceAssetSmallText(text: string): any {
  * This native sets the hover text of the image asset for the discord rich presence implementation.
  * @param text
  */
-export function setDiscordRichPresenceAssetText(text: string): any { 
+export function setDiscordRichPresenceAssetText(text: string): void { 
 	return _in(0x00000000, 0xb029d2fa, _ts(text)); 
 }
 
@@ -2172,7 +2172,7 @@ export function setDiscordRichPresenceAssetText(text: string): any {
  * @param duiObject
  * @param url
  */
-export function setDuiUrl(duiObject: any, url: string): any { 
+export function setDuiUrl(duiObject: any, url: string): void { 
 	return _in(0x00000000, 0xf761d9f3, duiObject, _ts(url)); 
 }
 
@@ -2181,7 +2181,7 @@ export function setDuiUrl(duiObject: any, url: string): any {
  * @param entity
  * @param enabled
  */
-export function setEntityDrawOutline(entity: number, enabled: boolean): any { 
+export function setEntityDrawOutline(entity: number, enabled: boolean): void { 
 	return _in(0x00000000, 0x76180407, entity, enabled); 
 }
 
@@ -2192,7 +2192,7 @@ export function setEntityDrawOutline(entity: number, enabled: boolean): any {
  * @param blue
  * @param alpha
  */
-export function setEntityDrawOutlineColor(red: number, green: number, blue: number, alpha: number): any { 
+export function setEntityDrawOutlineColor(red: number, green: number, blue: number, alpha: number): void { 
 	return _in(0x00000000, 0xb41a56c2, red, green, blue, alpha); 
 }
 
@@ -2206,7 +2206,7 @@ export function setEntityDrawOutlineColor(red: number, green: number, blue: numb
  * *   **2**: Fullscreen solid color except for entity.
  * @param shader
  */
-export function setEntityDrawOutlineShader(shader: number): any { 
+export function setEntityDrawOutlineShader(shader: number): void { 
 	return _in(0x00000000, 0x5261a01a, shader); 
 }
 
@@ -2226,7 +2226,7 @@ export function setEntityDrawOutlineShader(shader: number): any {
  * @param atY
  * @param atZ
  */
-export function setEntityMatrix(entity: number, forwardX: number, forwardY: number, forwardZ: number, rightX: number, rightY: number, rightZ: number, upX: number, upY: number, upZ: number, atX: number, atY: number, atZ: number): any { 
+export function setEntityMatrix(entity: number, forwardX: number, forwardY: number, forwardZ: number, rightX: number, rightY: number, rightZ: number, upX: number, upY: number, upZ: number, atX: number, atY: number, atZ: number): void { 
 	return _in(0x00000000, 0x0fb0639b, entity, _fv(forwardX), _fv(forwardY), _fv(forwardZ), _fv(rightX), _fv(rightY), _fv(rightZ), _fv(upX), _fv(upY), _fv(upZ), _fv(atX), _fv(atY), _fv(atZ)); 
 }
 
@@ -2234,7 +2234,7 @@ export function setEntityMatrix(entity: number, forwardX: number, forwardY: numb
  * Allows Weapon-Flashlight beams to stay visible while moving. Normally it only stays on while aiming.
  * @param state
  */
-export function setFlashLightKeepOnWhileMoving(state: boolean): any { 
+export function setFlashLightKeepOnWhileMoving(state: boolean): void { 
 	return _in(0x00000000, 0x7635b349, state); 
 }
 
@@ -2257,7 +2257,7 @@ export function setFlyThroughWindscreenParams(vehMinSpeed: number, unkMinSpeed: 
  * @param fieldName
  * @param value
  */
-export function setHandlingField(vehicle: string, class_: string, fieldName: string, value: any): any { 
+export function setHandlingField(vehicle: string, class_: string, fieldName: string, value: number): void { 
 	return _in(0x00000000, 0xfe8064e3, _ts(vehicle), _ts(class_), _ts(fieldName), value); 
 }
 
@@ -2269,7 +2269,7 @@ export function setHandlingField(vehicle: string, class_: string, fieldName: str
  * @param fieldName
  * @param value
  */
-export function setHandlingFloat(vehicle: string, class_: string, fieldName: string, value: number): any { 
+export function setHandlingFloat(vehicle: string, class_: string, fieldName: string, value: number): void { 
 	return _in(0x00000000, 0x090dd01c, _ts(vehicle), _ts(class_), _ts(fieldName), _fv(value)); 
 }
 
@@ -2280,7 +2280,7 @@ export function setHandlingFloat(vehicle: string, class_: string, fieldName: str
  * @param fieldName
  * @param value
  */
-export function setHandlingInt(vehicle: string, class_: string, fieldName: string, value: number): any { 
+export function setHandlingInt(vehicle: string, class_: string, fieldName: string, value: number): void { 
 	return _in(0x00000000, 0x8ab3f46c, _ts(vehicle), _ts(class_), _ts(fieldName), value); 
 }
 
@@ -2292,7 +2292,7 @@ export function setHandlingInt(vehicle: string, class_: string, fieldName: strin
  * @param fieldName
  * @param value
  */
-export function setHandlingVector(vehicle: string, class_: string, fieldName: string, value: Vector3): any { 
+export function setHandlingVector(vehicle: string, class_: string, fieldName: string, value: Vector3): void { 
 	return _in(0x00000000, 0x07f9d543, _ts(vehicle), _ts(class_), _ts(fieldName), value); 
 }
 
@@ -2300,39 +2300,39 @@ export function setHandlingVector(vehicle: string, class_: string, fieldName: st
  * Sets whether or not ownership checks should be performed while trying to stow a carriable on a hunting wagon.
  * @param ignore
  */
-export function setIgnoreVehicleOwnershipForStowing(ignore: boolean): any { 
+export function setIgnoreVehicleOwnershipForStowing(ignore: boolean): void { 
 	return _in(0x00000000, 0x85a10ffd, ignore); 
 }
 
-export function setInteriorPortalCornerPosition(interiorId: number, portalIndex: number, cornerIndex: number, posX: number, posY: number, posZ: number): any { 
+export function setInteriorPortalCornerPosition(interiorId: number, portalIndex: number, cornerIndex: number, posX: number, posY: number, posZ: number): void { 
 	return _in(0x00000000, 0x87f43553, interiorId, portalIndex, cornerIndex, _fv(posX), _fv(posY), _fv(posZ)); 
 }
 
-export function setInteriorPortalEntityFlag(interiorId: number, portalIndex: number, entityIndex: number, flag: number): any { 
+export function setInteriorPortalEntityFlag(interiorId: number, portalIndex: number, entityIndex: number, flag: number): void { 
 	return _in(0x00000000, 0x8349cd76, interiorId, portalIndex, entityIndex, flag); 
 }
 
-export function setInteriorPortalFlag(interiorId: number, portalIndex: number, flag: number): any { 
+export function setInteriorPortalFlag(interiorId: number, portalIndex: number, flag: number): void { 
 	return _in(0x00000000, 0x88b2355e, interiorId, portalIndex, flag); 
 }
 
-export function setInteriorPortalRoomFrom(interiorId: number, portalIndex: number, roomFrom: number): any { 
+export function setInteriorPortalRoomFrom(interiorId: number, portalIndex: number, roomFrom: number): void { 
 	return _in(0x00000000, 0x298fc783, interiorId, portalIndex, roomFrom); 
 }
 
-export function setInteriorPortalRoomTo(interiorId: number, portalIndex: number, roomTo: number): any { 
+export function setInteriorPortalRoomTo(interiorId: number, portalIndex: number, roomTo: number): void { 
 	return _in(0x00000000, 0x58982680, interiorId, portalIndex, roomTo); 
 }
 
-export function setInteriorRoomExtents(interiorId: number, roomIndex: number, bbMinX: number, bbMinY: number, bbMinZ: number, bbMaxX: number, bbMaxY: number, bbMaxZ: number): any { 
+export function setInteriorRoomExtents(interiorId: number, roomIndex: number, bbMinX: number, bbMinY: number, bbMinZ: number, bbMaxX: number, bbMaxY: number, bbMaxZ: number): void { 
 	return _in(0x00000000, 0x4fdcf51e, interiorId, roomIndex, _fv(bbMinX), _fv(bbMinY), _fv(bbMinZ), _fv(bbMaxX), _fv(bbMaxY), _fv(bbMaxZ)); 
 }
 
-export function setInteriorRoomFlag(interiorId: number, roomIndex: number, flag: number): any { 
+export function setInteriorRoomFlag(interiorId: number, roomIndex: number, flag: number): void { 
 	return _in(0x00000000, 0x5518d60b, interiorId, roomIndex, flag); 
 }
 
-export function setInteriorRoomTimecycle(interiorId: number, roomIndex: number, timecycleHash: number): any { 
+export function setInteriorRoomTimecycle(interiorId: number, roomIndex: number, timecycleHash: number): void { 
 	return _in(0x00000000, 0x31c9a848, interiorId, roomIndex, timecycleHash); 
 }
 
@@ -2341,7 +2341,7 @@ export function setInteriorRoomTimecycle(interiorId: number, roomIndex: number, 
  * you will have to manually invoke `SHUTDOWN_LOADING_SCREEN_NUI` whenever you want to hide the NUI loading screen.
  * @param manualShutdown
  */
-export function setManualShutdownLoadingScreenNui(manualShutdown: boolean): any { 
+export function setManualShutdownLoadingScreenNui(manualShutdown: boolean): void { 
 	return _in(0x00000000, 0x1722c938, manualShutdown); 
 }
 
@@ -2354,7 +2354,7 @@ export function setManualShutdownLoadingScreenNui(manualShutdown: boolean): any 
  * @param tilesX
  * @param tilesY
  */
-export function setMapZoomDataLevel(index: number, zoomScale: number, zoomSpeed: number, scrollSpeed: number, tilesX: number, tilesY: number): any { 
+export function setMapZoomDataLevel(index: number, zoomScale: number, zoomSpeed: number, scrollSpeed: number, tilesX: number, tilesY: number): void { 
 	return _in(0x00000000, 0x447c718e, index, _fv(zoomScale), _fv(zoomSpeed), _fv(scrollSpeed), _fv(tilesX), _fv(tilesY)); 
 }
 
@@ -2363,7 +2363,7 @@ export function setMapZoomDataLevel(index: number, zoomScale: number, zoomSpeed:
  * A setter for [`GetMillisecondsPerGameMinute`](#\_0x2F8B4D1C595B11DB).
  * @param value
  */
-export function setMillisecondsPerGameMinute(value: number): any { 
+export function setMillisecondsPerGameMinute(value: number): void { 
 	return _in(0x00000000, 0x36ca2554, value); 
 }
 
@@ -2371,7 +2371,7 @@ export function setMillisecondsPerGameMinute(value: number): any {
  * Sets the type for the minimap blip clipping object to be either rectangular or rounded.
  * @param type
  */
-export function setMinimapClipType(type: number): any { 
+export function setMinimapClipType(type: number): void { 
 	return _in(0x00000000, 0xb8b4490c, type); 
 }
 
@@ -2385,7 +2385,7 @@ export function setMinimapClipType(type: number): any {
  * @param sizeX
  * @param sizeY
  */
-export function setMinimapComponentPosition(name: string, alignX: string, alignY: string, posX: number, posY: number, sizeX: number, sizeY: number): any { 
+export function setMinimapComponentPosition(name: string, alignX: string, alignY: string, posX: number, posY: number, sizeX: number, sizeY: number): void { 
 	return _in(0x00000000, 0x3e882b23, _ts(name), _ts(alignX), _ts(alignY), _fv(posX), _fv(posY), _fv(sizeX), _fv(sizeY)); 
 }
 
@@ -2398,7 +2398,7 @@ export function setMinimapComponentPosition(name: string, alignX: string, alignY
  * @param yScale
  * @param alpha
  */
-export function setMinimapOverlayDisplay(miniMap: number, x: number, y: number, xScale: number, yScale: number, alpha: number): any { 
+export function setMinimapOverlayDisplay(miniMap: number, x: number, y: number, xScale: number, yScale: number, alpha: number): void { 
 	return _in(0x00000000, 0x6a48b3ca, miniMap, _fv(x), _fv(y), _fv(xScale), _fv(yScale), _fv(alpha)); 
 }
 
@@ -2413,11 +2413,11 @@ export function setMinimapOverlayDisplay(miniMap: number, x: number, y: number, 
  * ```
  * @param type
  */
-export function setMinimapType(type: number): any { 
+export function setMinimapType(type: number): void { 
 	return _in(0x00000000, 0x5fb53015, type); 
 }
 
-export function setModelHeadlightConfiguration(modelHash: number, ratePerSecond: number, headlightRotation: number, invertRotation: boolean): any { 
+export function setModelHeadlightConfiguration(modelHash: number, ratePerSecond: number, headlightRotation: number, invertRotation: boolean): void { 
 	return _in(0x00000000, 0x7f6b8d75, modelHash, _fv(ratePerSecond), _fv(headlightRotation), invertRotation); 
 }
 
@@ -2425,7 +2425,7 @@ export function setModelHeadlightConfiguration(modelHash: number, ratePerSecond:
  * Sets whether all tags should group (normal game behavior) or should remain independent and above each ped's respective head when in a vehicle.
  * @param enabled
  */
-export function setMpGamerTagsUseVehicleBehavior(enabled: boolean): any { 
+export function setMpGamerTagsUseVehicleBehavior(enabled: boolean): void { 
 	return _in(0x00000000, 0x7a27bc93, enabled); 
 }
 
@@ -2433,19 +2433,19 @@ export function setMpGamerTagsUseVehicleBehavior(enabled: boolean): any {
  * Sets the maximum distance at which all tags will be visible and which beyond will not be displayed. Distance is measured from the camera position.
  * @param distance
  */
-export function setMpGamerTagsVisibleDistance(distance: number): any { 
+export function setMpGamerTagsVisibleDistance(distance: number): void { 
 	return _in(0x00000000, 0xd61676b3, _fv(distance)); 
 }
 
-export function setNetworkWalkMode(enabled: boolean): any { 
+export function setNetworkWalkMode(enabled: boolean): void { 
 	return _in(0x00000000, 0x55188d2d, enabled); 
 }
 
-export function setNuiFocus(hasFocus: boolean, hasCursor: boolean): any { 
+export function setNuiFocus(hasFocus: boolean, hasCursor: boolean): void { 
 	return _in(0x00000000, 0x5b98ae30, hasFocus, hasCursor); 
 }
 
-export function setNuiFocusKeepInput(keepInput: boolean): any { 
+export function setNuiFocusKeepInput(keepInput: boolean): void { 
 	return _in(0x00000000, 0x3ff5e5f8, keepInput); 
 }
 
@@ -2454,7 +2454,7 @@ export function setNuiFocusKeepInput(keepInput: boolean): any {
  * @param modelHash
  * @param personalityHash
  */
-export function setPedModelPersonality(modelHash: number, personalityHash: number): any { 
+export function setPedModelPersonality(modelHash: number, personalityHash: number): void { 
 	return _in(0x00000000, 0x46f6b38b, modelHash, personalityHash); 
 }
 
@@ -2472,7 +2472,7 @@ export function setPlayerStamina(playerId: number, stamina: number): boolean {
  * @param player
  * @param state
  */
-export function setPlayerTalkingOverride(player: number, state: boolean): any { 
+export function setPlayerTalkingOverride(player: number, state: boolean): void { 
 	return _in(0x00000000, 0xfc02caf6, player, state); 
 }
 
@@ -2480,7 +2480,7 @@ export function setPlayerTalkingOverride(player: number, state: boolean): any {
  * Sets the player's rich presence detail state for social platform providers to a specified string.
  * @param presenceState
  */
-export function setRichPresence(presenceState: string): any { 
+export function setRichPresence(presenceState: string): void { 
 	return _in(0x00000000, 0x7bdcbd45, _ts(presenceState)); 
 }
 
@@ -2489,7 +2489,7 @@ export function setRichPresence(presenceState: string): any {
  * @param rope
  * @param lengthChangeRate
  */
-export function setRopeLengthChangeRate(rope: number, lengthChangeRate: number): any { 
+export function setRopeLengthChangeRate(rope: number, lengthChangeRate: number): void { 
 	return _in(0x00000000, 0x69b680a7, rope, _fv(lengthChangeRate)); 
 }
 
@@ -2497,7 +2497,7 @@ export function setRopeLengthChangeRate(rope: number, lengthChangeRate: number):
  * Toggles whether the usage of [ADD_ROPE](#\_0xE832D760399EB220) should create an underlying CNetworkRopeWorldStateData. By default this is set to false.
  * @param shouldCreate
  */
-export function setRopesCreateNetworkWorldState(shouldCreate: boolean): any { 
+export function setRopesCreateNetworkWorldState(shouldCreate: boolean): void { 
 	return _in(0x00000000, 0x0e62fc73, shouldCreate); 
 }
 
@@ -2528,11 +2528,11 @@ export function setRuntimeTextureImage(tex: any, fileName: string): boolean {
  * @param b
  * @param a
  */
-export function setRuntimeTexturePixel(tex: any, x: number, y: number, r: number, g: number, b: number, a: number): any { 
+export function setRuntimeTexturePixel(tex: any, x: number, y: number, r: number, g: number, b: number, a: number): void { 
 	return _in(0x00000000, 0xab65acee, tex, x, y, r, g, b, a); 
 }
 
-export function setSnakeoilForEntry(name: string, path: string, data: string): any { 
+export function setSnakeoilForEntry(name: string, path: string, data: string): void { 
 	return _in(0x00000000, 0xa7dd3209, _ts(name), _ts(path), _ts(data)); 
 }
 
@@ -2546,7 +2546,7 @@ export function setTextChatEnabled(enabled: boolean): boolean {
  * @param doorIndex
  * @param ratio
  */
-export function setTrainDoorOpenRatio(train: number, doorIndex: number, ratio: number): any { 
+export function setTrainDoorOpenRatio(train: number, doorIndex: number, ratio: number): void { 
 	return _in(0x00000000, 0x2468dbe8, train, doorIndex, _fv(ratio)); 
 }
 
@@ -2554,11 +2554,11 @@ export function setTrainDoorOpenRatio(train: number, doorIndex: number, ratio: n
  * Enables or disables whether train doors should be forced open whilst a player is inside the train. This is enabled by default in multiplayer.
  * @param forceOpen
  */
-export function setTrainsForceDoorsOpen(forceOpen: boolean): any { 
+export function setTrainsForceDoorsOpen(forceOpen: boolean): void { 
 	return _in(0x00000000, 0xd4d1ba63, forceOpen); 
 }
 
-export function setVehicleAlarmTimeLeft(vehicle: number, time: number): any { 
+export function setVehicleAlarmTimeLeft(vehicle: number, time: number): void { 
 	return _in(0x00000000, 0xc108ee6f, vehicle, time); 
 }
 
@@ -2567,27 +2567,27 @@ export function setVehicleAlarmTimeLeft(vehicle: number, time: number): any {
  * @param vehicle
  * @param value
  */
-export function setVehicleAutoRepairDisabled(vehicle: number, value: boolean): any { 
+export function setVehicleAutoRepairDisabled(vehicle: number, value: boolean): void { 
 	return _in(0x00000000, 0x5f3a3574, vehicle, value); 
 }
 
-export function setVehicleClutch(vehicle: number, clutch: number): any { 
+export function setVehicleClutch(vehicle: number, clutch: number): void { 
 	return _in(0x00000000, 0x2f70aced, vehicle, _fv(clutch)); 
 }
 
-export function setVehicleCurrentRpm(vehicle: number, rpm: number): any { 
+export function setVehicleCurrentRpm(vehicle: number, rpm: number): void { 
 	return _in(0x00000000, 0x2a01a8fc, vehicle, _fv(rpm)); 
 }
 
-export function setVehicleEngineTemperature(vehicle: number, temperature: number): any { 
+export function setVehicleEngineTemperature(vehicle: number, temperature: number): void { 
 	return _in(0x00000000, 0x6c93c4a9, vehicle, _fv(temperature)); 
 }
 
-export function setVehicleFuelLevel(vehicle: number, level: number): any { 
+export function setVehicleFuelLevel(vehicle: number, level: number): void { 
 	return _in(0x00000000, 0xba970511, vehicle, _fv(level)); 
 }
 
-export function setVehicleGravityAmount(vehicle: number, gravity: number): any { 
+export function setVehicleGravityAmount(vehicle: number, gravity: number): void { 
 	return _in(0x00000000, 0x1a963e58, vehicle, _fv(gravity)); 
 }
 
@@ -2599,7 +2599,7 @@ export function setVehicleGravityAmount(vehicle: number, gravity: number): any {
  * @param fieldName
  * @param value
  */
-export function setVehicleHandlingField(vehicle: number, class_: string, fieldName: string, value: any): any { 
+export function setVehicleHandlingField(vehicle: number, class_: string, fieldName: string, value: number): void { 
 	return _in(0x00000000, 0x2ba40795, vehicle, _ts(class_), _ts(fieldName), value); 
 }
 
@@ -2611,7 +2611,7 @@ export function setVehicleHandlingField(vehicle: number, class_: string, fieldNa
  * @param fieldName
  * @param value
  */
-export function setVehicleHandlingFloat(vehicle: number, class_: string, fieldName: string, value: number): any { 
+export function setVehicleHandlingFloat(vehicle: number, class_: string, fieldName: string, value: number): void { 
 	return _in(0x00000000, 0x488c86d2, vehicle, _ts(class_), _ts(fieldName), _fv(value)); 
 }
 
@@ -2622,7 +2622,7 @@ export function setVehicleHandlingFloat(vehicle: number, class_: string, fieldNa
  * @param fieldName
  * @param value
  */
-export function setVehicleHandlingInt(vehicle: number, class_: string, fieldName: string, value: number): any { 
+export function setVehicleHandlingInt(vehicle: number, class_: string, fieldName: string, value: number): void { 
 	return _in(0x00000000, 0xc37f4cf9, vehicle, _ts(class_), _ts(fieldName), value); 
 }
 
@@ -2633,23 +2633,23 @@ export function setVehicleHandlingInt(vehicle: number, class_: string, fieldName
  * @param fieldName
  * @param value
  */
-export function setVehicleHandlingVector(vehicle: number, class_: string, fieldName: string, value: Vector3): any { 
+export function setVehicleHandlingVector(vehicle: number, class_: string, fieldName: string, value: Vector3): void { 
 	return _in(0x00000000, 0x12497890, vehicle, _ts(class_), _ts(fieldName), value); 
 }
 
-export function setVehicleHighGear(vehicle: number, gear: number): any { 
+export function setVehicleHighGear(vehicle: number, gear: number): void { 
 	return _in(0x00000000, 0x20b1b3e6, vehicle, gear); 
 }
 
-export function setVehicleOilLevel(vehicle: number, level: number): any { 
+export function setVehicleOilLevel(vehicle: number, level: number): void { 
 	return _in(0x00000000, 0x90d1cad1, vehicle, _fv(level)); 
 }
 
-export function setVehicleSteeringAngle(vehicle: number, angle: number): any { 
+export function setVehicleSteeringAngle(vehicle: number, angle: number): void { 
 	return _in(0x00000000, 0xffccc2ea, vehicle, _fv(angle)); 
 }
 
-export function setVehicleSteeringScale(vehicle: number, scale: number): any { 
+export function setVehicleSteeringScale(vehicle: number, scale: number): void { 
 	return _in(0x00000000, 0xeb46596f, vehicle, _fv(scale)); 
 }
 
@@ -2662,11 +2662,11 @@ export function setVehicleSteeringScale(vehicle: number, scale: number): any {
  * @param vehicle
  * @param newHeight
  */
-export function setVehicleSuspensionHeight(vehicle: number, newHeight: number): any { 
+export function setVehicleSuspensionHeight(vehicle: number, newHeight: number): void { 
 	return _in(0x00000000, 0xb3439a01, vehicle, _fv(newHeight)); 
 }
 
-export function setVehicleTurboPressure(vehicle: number, pressure: number): any { 
+export function setVehicleTurboPressure(vehicle: number, pressure: number): void { 
 	return _in(0x00000000, 0x6485615e, vehicle, _fv(pressure)); 
 }
 
@@ -2678,7 +2678,7 @@ export function setVehicleTurboPressure(vehicle: number, pressure: number): any 
  * @param wheelIndex
  * @param pressure
  */
-export function setVehicleWheelBrakePressure(vehicle: number, wheelIndex: number, pressure: number): any { 
+export function setVehicleWheelBrakePressure(vehicle: number, wheelIndex: number, pressure: number): void { 
 	return _in(0x00000000, 0xe80f4e31, vehicle, wheelIndex, _fv(pressure)); 
 }
 
@@ -2689,11 +2689,11 @@ export function setVehicleWheelBrakePressure(vehicle: number, wheelIndex: number
  * @param wheelIndex
  * @param flags
  */
-export function setVehicleWheelFlags(vehicle: number, wheelIndex: number, flags: number): any { 
+export function setVehicleWheelFlags(vehicle: number, wheelIndex: number, flags: number): void { 
 	return _in(0x00000000, 0xd2b9e90d, vehicle, wheelIndex, flags); 
 }
 
-export function setVehicleWheelHealth(vehicle: number, wheelIndex: number, health: number): any { 
+export function setVehicleWheelHealth(vehicle: number, wheelIndex: number, health: number): void { 
 	return _in(0x00000000, 0xb22ecefd, vehicle, wheelIndex, _fv(health)); 
 }
 
@@ -2706,7 +2706,7 @@ export function setVehicleWheelHealth(vehicle: number, wheelIndex: number, healt
  * @param wheelIndex
  * @param powered
  */
-export function setVehicleWheelIsPowered(vehicle: number, wheelIndex: number, powered: boolean): any { 
+export function setVehicleWheelIsPowered(vehicle: number, wheelIndex: number, powered: boolean): void { 
 	return _in(0x00000000, 0xbd5291a0, vehicle, wheelIndex, powered); 
 }
 
@@ -2717,7 +2717,7 @@ export function setVehicleWheelIsPowered(vehicle: number, wheelIndex: number, po
  * @param wheelIndex
  * @param power
  */
-export function setVehicleWheelPower(vehicle: number, wheelIndex: number, power: number): any { 
+export function setVehicleWheelPower(vehicle: number, wheelIndex: number, power: number): void { 
 	return _in(0x00000000, 0xc6146043, vehicle, wheelIndex, _fv(power)); 
 }
 
@@ -2727,7 +2727,7 @@ export function setVehicleWheelPower(vehicle: number, wheelIndex: number, power:
  * @param wheelIndex
  * @param value
  */
-export function setVehicleWheelRimColliderSize(vehicle: number, wheelIndex: number, value: number): any { 
+export function setVehicleWheelRimColliderSize(vehicle: number, wheelIndex: number, value: number): void { 
 	return _in(0x00000000, 0xf380e184, vehicle, wheelIndex, _fv(value)); 
 }
 
@@ -2738,7 +2738,7 @@ export function setVehicleWheelRimColliderSize(vehicle: number, wheelIndex: numb
  * @param wheelIndex
  * @param speed
  */
-export function setVehicleWheelRotationSpeed(vehicle: number, wheelIndex: number, speed: number): any { 
+export function setVehicleWheelRotationSpeed(vehicle: number, wheelIndex: number, speed: number): void { 
 	return _in(0x00000000, 0x35ed100d, vehicle, wheelIndex, _fv(speed)); 
 }
 
@@ -2759,7 +2759,7 @@ export function setVehicleWheelSize(vehicle: number, size: number): boolean {
  * @param wheelIndex
  * @param value
  */
-export function setVehicleWheelTireColliderSize(vehicle: number, wheelIndex: number, value: number): any { 
+export function setVehicleWheelTireColliderSize(vehicle: number, wheelIndex: number, value: number): void { 
 	return _in(0x00000000, 0xb962d05c, vehicle, wheelIndex, _fv(value)); 
 }
 
@@ -2769,7 +2769,7 @@ export function setVehicleWheelTireColliderSize(vehicle: number, wheelIndex: num
  * @param wheelIndex
  * @param value
  */
-export function setVehicleWheelTireColliderWidth(vehicle: number, wheelIndex: number, value: number): any { 
+export function setVehicleWheelTireColliderWidth(vehicle: number, wheelIndex: number, value: number): void { 
 	return _in(0x00000000, 0x47bd0270, vehicle, wheelIndex, _fv(value)); 
 }
 
@@ -2780,7 +2780,7 @@ export function setVehicleWheelTireColliderWidth(vehicle: number, wheelIndex: nu
  * @param wheelIndex
  * @param length
  */
-export function setVehicleWheelTractionVectorLength(vehicle: number, wheelIndex: number, length: number): any { 
+export function setVehicleWheelTractionVectorLength(vehicle: number, wheelIndex: number, length: number): void { 
 	return _in(0x00000000, 0x85c85a3a, vehicle, wheelIndex, _fv(length)); 
 }
 
@@ -2810,11 +2810,11 @@ export function setVehicleWheelWidth(vehicle: number, width: number): boolean {
  * @param wheelIndex
  * @param offset
  */
-export function setVehicleWheelXOffset(vehicle: number, wheelIndex: number, offset: number): any { 
+export function setVehicleWheelXOffset(vehicle: number, wheelIndex: number, offset: number): void { 
 	return _in(0x00000000, 0x0bd6357d, vehicle, wheelIndex, _fv(offset)); 
 }
 
-export function setVehicleWheelYRotation(vehicle: number, wheelIndex: number, value: number): any { 
+export function setVehicleWheelYRotation(vehicle: number, wheelIndex: number, value: number): void { 
 	return _in(0x00000000, 0xc6c2171f, vehicle, wheelIndex, _fv(value)); 
 }
 
@@ -2831,7 +2831,7 @@ export function setVehicleWheelYRotation(vehicle: number, wheelIndex: number, va
  * @param vehicle
  * @param state
  */
-export function setVehicleWheelieState(vehicle: number, state: number): any { 
+export function setVehicleWheelieState(vehicle: number, state: number): void { 
 	return _in(0x00000000, 0xeab8db65, vehicle, state); 
 }
 
@@ -2842,7 +2842,7 @@ export function setVehicleWheelieState(vehicle: number, state: number): any {
  * @param green
  * @param blue
  */
-export function setVehicleXenonLightsCustomColor(vehicle: number, red: number, green: number, blue: number): any { 
+export function setVehicleXenonLightsCustomColor(vehicle: number, red: number, green: number, blue: number): void { 
 	return _in(0x00000000, 0x1683e7f0, vehicle, red, green, blue); 
 }
 
@@ -2851,7 +2851,7 @@ export function setVehicleXenonLightsCustomColor(vehicle: number, red: number, g
  * @param name
  * @param value
  */
-export function setVisualSettingFloat(name: string, value: number): any { 
+export function setVisualSettingFloat(name: string, value: number): void { 
 	return _in(0x00000000, 0xd1d31681, _ts(name), _fv(value)); 
 }
 
@@ -2860,7 +2860,7 @@ export function setVisualSettingFloat(name: string, value: number): any {
  * @param weaponHash
  * @param amplitude
  */
-export function setWeaponRecoilShakeAmplitude(weaponHash: number, amplitude: number): any { 
+export function setWeaponRecoilShakeAmplitude(weaponHash: number, amplitude: number): void { 
 	return _in(0x00000000, 0x9864312f, weaponHash, _fv(amplitude)); 
 }
 
@@ -2868,7 +2868,7 @@ export function setWeaponRecoilShakeAmplitude(weaponHash: number, amplitude: num
  * Disables the game's built-in auto-reloading.
  * @param state
  */
-export function setWeaponsNoAutoreload(state: boolean): any { 
+export function setWeaponsNoAutoreload(state: boolean): void { 
 	return _in(0x00000000, 0x311150e5, state); 
 }
 
@@ -2876,7 +2876,7 @@ export function setWeaponsNoAutoreload(state: boolean): any {
  * Disables autoswapping to another weapon when the current weapon runs out of ammo.
  * @param state
  */
-export function setWeaponsNoAutoswap(state: boolean): any { 
+export function setWeaponsNoAutoswap(state: boolean): void { 
 	return _in(0x00000000, 0x02a7b50e, state); 
 }
 
@@ -2886,14 +2886,14 @@ export function setWeaponsNoAutoswap(state: boolean): any {
  * To be able to use [\_SET_WEATHER_TYPE_TRANSITION](#\_0x578C752848ECFA0C), this has to be set to false.
  * @param network
  */
-export function setWeatherOwnedByNetwork(network: boolean): any { 
+export function setWeatherOwnedByNetwork(network: boolean): void { 
 	return _in(0x00000000, 0x2703d582, network); 
 }
 
 /**
  * Shuts down the `loadingScreen` NUI frame, similarly to `SHUTDOWN_LOADING_SCREEN`.
  */
-export function shutdownLoadingScreenNui(): any { 
+export function shutdownLoadingScreenNui(): void { 
 	return _in(0x00000000, 0xb9234afb); 
 }
 
@@ -2913,7 +2913,7 @@ export function startFindExternalKvp(resourceName: string, prefix: string): numb
  * @param payloadLength
  * @param bps
  */
-export function triggerLatentServerEventInternal(eventName: string, eventPayload: string, payloadLength: number, bps: number): any { 
+export function triggerLatentServerEventInternal(eventName: string, eventPayload: string, payloadLength: number, bps: number): void { 
 	return _in(0x00000000, 0x128737ea, _ts(eventName), _ts(eventPayload), payloadLength, bps); 
 }
 
@@ -2923,7 +2923,7 @@ export function triggerLatentServerEventInternal(eventName: string, eventPayload
  * @param eventPayload
  * @param payloadLength
  */
-export function triggerServerEventInternal(eventName: string, eventPayload: string, payloadLength: number): any { 
+export function triggerServerEventInternal(eventName: string, eventPayload: string, payloadLength: number): void { 
 	return _in(0x00000000, 0x7fdd1128, _ts(eventName), _ts(eventPayload), payloadLength); 
 }
 
@@ -2933,7 +2933,7 @@ export function triggerServerEventInternal(eventName: string, eventPayload: stri
  * Use along side the REGISTER_RAW_NUI_CALLBACK native.
  * @param callbackType
  */
-export function unregisterRawNuiCallback(callbackType: string): any { 
+export function unregisterRawNuiCallback(callbackType: string): void { 
 	return _in(0x00000000, 0x7fb46432, _ts(callbackType)); 
 }
 
@@ -2944,6 +2944,6 @@ export function unregisterRawNuiCallback(callbackType: string): any {
  * @param entity
  * @param entityDef
  */
-export function updateMapdataEntity(mapdata: number, entity: number, entityDef: number): any { 
+export function updateMapdataEntity(mapdata: number, entity: number, entityDef: any): void { 
 	return _in(0x00000000, 0xfc52cb91, mapdata, entity, entityDef); 
 }
