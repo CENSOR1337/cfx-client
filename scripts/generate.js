@@ -11,7 +11,8 @@ const debugNatives = [
     "0x7B3703D2D32DFA18",
     "0xC906A7DAB05C8D2B",
     "0x8BDC7BFC57A81E76",
-    "0x9E82F0F362881B29"
+    "0x9E82F0F362881B29",
+    "0xCF143FB9"
 ]
 const bDebug = false;
 const header = `
