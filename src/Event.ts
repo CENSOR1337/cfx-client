@@ -1,6 +1,6 @@
-import { Event as SharedEvent } from "@cfx/shared";
-import { listenerType } from "@cfx/shared";
-import { Citizen } from "@cfx/shared";
+import { Event as SharedEvent } from "cfx-shared";
+import { listenerType } from "cfx-shared";
+import { Citizen } from "cfx-shared";
 
 export class Event extends SharedEvent {
 	public static onServer(eventName: string, listener: listenerType, once = false): SharedEvent {
