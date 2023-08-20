@@ -24,7 +24,6 @@ const paramTypes = {
     "long": "long",
     "float": "float",
     "entity": "Entity",
-    "object": "Object",
     "entity*": "Entity",
     "cam": "Cam",
     "vector3*": "Vector3",
