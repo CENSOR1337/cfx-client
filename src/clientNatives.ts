@@ -2945,5 +2945,5 @@ export function unregisterRawNuiCallback(callbackType: string): void {
  * @param entityDef
  */
 export function updateMapdataEntity(mapdata: number, entity: number, entityDef: any): void { 
-	return _in(0x00000000, 0xfc52cb91, mapdata, entity, ...(_obj(entityDef)); 
+	return _in(0x00000000, 0xfc52cb91, mapdata, entity, ...(_obj(entityDef))); 
 }
