@@ -91,10 +91,6 @@ async function downloadCFXNatives() {
                 }
             }
 
-            if (hash == "0x8839120D") {
-                console.log(results);
-            }
-
             cfxNatives.set(hash, {
                 name: native.name,
                 jhash: "PLACEHOLDER",
