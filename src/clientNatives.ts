@@ -13,22 +13,10 @@ const _rf = Citizen.resultAsFloat();
 const _rl = Citizen.resultAsLong();
 const _s = Citizen.resultAsString();
 const _rv = Citizen.resultAsVector();
-//@ts-ignore
 const _ro = Citizen.resultAsObject2();
-//@ts-ignore
 const _in = Citizen.invokeNativeByHash;
-const _ii_base = Citizen.pointerValueInt();
-const _fi_base = Citizen.pointerValueFloat();
-
-function _ii(...args: any[]) {
-	// @ts-ignore
-	return _ii_base(...args);
-}
-
-function _fi(...args: any[]) {
-	// @ts-ignore
-	return _fi_base(...args);
-}
+const _ii = Citizen.pointerValueIntInitialized;
+const _fi = Citizen.pointerValueFloatInitialized;
 
 function joaat(s: string) {
 	const k = s.toLowerCase();
@@ -55,6 +43,11 @@ function _ch(hash: any) {
 	return hash;
 }
 
+function _obj(obj: any) {
+	const s = msgpack_pack(obj);
+	return [s, s.length];
+}
+
 function _ts(num: any) {
 	if (num === 0 || num === null || num === undefined || num === false) {
 		// workaround for users calling string parameters with '0', also nil being translated
@@ -78,6 +71,7 @@ function _mfr(fn: any) {
 function _mv(vector: any): Vector3 {
 	return Vector3.fromArray(vector);
 }
+
 /**
  * Adds an output for the specified audio submix.
  * @param submixId
