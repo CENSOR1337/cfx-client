@@ -1,5 +1,5 @@
 const fs = require("fs");
-const { Native } = require("@cfx/natives/scripts/Native");
+const { Native } = require("cfx-natives/scripts/Native");
 
 const debugNatives = [
     "0x3FEF770D40960D5A",
