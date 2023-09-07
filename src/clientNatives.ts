@@ -13,10 +13,22 @@ const _rf = Citizen.resultAsFloat();
 const _rl = Citizen.resultAsLong();
 const _s = Citizen.resultAsString();
 const _rv = Citizen.resultAsVector();
+//@ts-ignore
 const _ro = Citizen.resultAsObject2();
+//@ts-ignore
 const _in = Citizen.invokeNativeByHash;
-const _ii = Citizen.pointerValueIntInitialized;
-const _fi = Citizen.pointerValueFloatInitialized;
+const _ii_base = Citizen.pointerValueInt();
+const _fi_base = Citizen.pointerValueFloat();
+
+function _ii(...args: any[]) {
+	// @ts-ignore
+	return _ii_base(...args);
+}
+
+function _fi(...args: any[]) {
+	// @ts-ignore
+	return _fi_base(...args);
+}
 
 function joaat(s: string) {
 	const k = s.toLowerCase();
